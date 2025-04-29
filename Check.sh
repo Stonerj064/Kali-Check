@@ -78,20 +78,4 @@ else
 fi
 
 echo
-echo Checking Connectivity Compliance...
-
-# Check RDP
-echo "Checking RDP Access (port 3389)..."
-(
-    exec 3<>/dev/tcp/127.0.0.1/3389
-) >/dev/null 2>&1 && echo -e "${GREEN}[Yes]${RESET} RDP Access" || echo -e "${RED}[No]${RESET} RDP Access"
-
-# Check SSH
-echo
-echo "Checking SSH Access (port 22)..."
-(
-    exec 3<>/dev/tcp/127.0.0.1/22
-) >/dev/null 2>&1 && echo -e "${GREEN}[Yes]${RESET} SSH Access" || echo -e "${RED}[No]${RESET} SSH Access"
-
-echo
 read -p "Press Enter to finish..."
